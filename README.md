@@ -6,11 +6,13 @@ A comprehensive research website and benchmark platform for crop phenology and y
 
 ## Overview
 
-SICKLE++ presents a two-phase research initiative:
+SICKLE++ benchmarks ground-level Andhra Pradesh crop data against models trained on the original SICKLE dataset. This work evaluates cross-region generalization of satellite-based phenology and yield prediction without task-specific retraining.
 
 - **Phase 1 (Foundation):** Original Tamil Nadu dataset (WACV 2024) establishing baseline performance with multi-sensor fusion (Sentinel-1, Sentinel-2, Landsat-8) across 5 crop phenology and yield prediction tasks.
 
-- **Phase 2 (Generalization):** Zero-shot inference on Andhra Pradesh region using Phase 1-trained models, validating cross-region generalization with 730 plots from CIMMYT CSISA dataset.
+- **Phase 2 (Andhra Pradesh Benchmark):** Ground-level validation using Phase 1-trained models on 730 CIMMYT CSISA plots in Andhra Pradesh, testing zero-shot cross-region generalization without retraining.
+
+**Main Experimentation Repository:** [github.com/riju-talk/sickle-plus-plus](https://github.com/riju-talk/sickle-plus-plus)
 
 **Research Tasks:**
 1. Crop Type Classification
@@ -64,47 +66,6 @@ sickle-/
 ├── eslint.config.js
 ├── components.json
 └── README.md
-```
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js & npm ([install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
-
-### Local Development
-
-```sh
-# Clone the repository
-git clone <YOUR_GIT_URL>
-
-# Navigate to project directory
-cd sickle-
-
-# Install dependencies
-npm i
-
-# Start development server
-npm run dev
-```
-
-The application will be available at `http://localhost:5173` with auto-reloading enabled.
-
-### Build & Preview
-
-```sh
-# Build for production
-npm run build
-
-# Preview production build locally
-npm run preview
-```
-
-### Linting & Code Quality
-
-```sh
-# Run ESLint
-npm run lint
 ```
 
 ## Technology Stack
@@ -212,48 +173,10 @@ For research using SICKLE or SICKLE++, please cite:
 }
 ```
 
-## Development & Editing
-
-### Use Your Preferred IDE
-
-Clone the repository and work locally:
-```sh
-git clone <YOUR_GIT_URL>
-cd sickle-
-npm i
-npm run dev
-```
-
-### Edit Files Directly in GitHub
-
-- Navigate to the desired file
-- Click the "Edit" button (pencil icon)
-- Commit your changes
-
-### Use GitHub Codespaces
-
-- Click "Code" (green button) on the repository
-- Select "Codespaces" tab
-- Click "New codespace"
-- Edit and commit changes
-
-## Deployment
-
-The project can be deployed to any static hosting service:
-
-- **Vercel:** Automatic deployments from Git
-- **Netlify:** Connect repository for CI/CD
-- **GitHub Pages:** Build and deploy from Actions
-- **Traditional Hosting:** Run `npm run build` and deploy the `dist/` directory
-
-## License & Contributing
-
-For contribution guidelines and licensing information, see the project's main documentation.
-
 ## Support
 
 For questions or issues related to the SICKLE++ research, please refer to the embedded presentation PDF in the "Existing Work" section or contact the research team.
 
 ---
 
-**Last Updated:** 2024
+**Last Updated:** May 2026
