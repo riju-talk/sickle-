@@ -2,9 +2,12 @@ import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { label: "Hero", href: "#hero" },
+  { label: "Overview", href: "#hero" },
   { label: "Problem", href: "#problem" },
-  { label: "Dataset", href: "#dataset" },
+  { label: "Existing Work + Phase 1", href: "#existing" },
+  { label: "Phase 2", href: "#phase2" },
+  { label: "Results", href: "#results" },
+  { label: "Pipeline", href: "#pipeline" },
 ];
 
 export default function Navbar() {
