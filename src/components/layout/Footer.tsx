@@ -1,20 +1,18 @@
+import { Github, BookOpen, Mail, Users } from "lucide-react";
+
 export default function Footer() {
   return (
-    <footer className="bg-navy-900 text-gray-300 px-4 pt-10 pb-6">
-      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 border-b border-white/10 pb-8">
-        <div>
-          <h4 className="font-heading font-bold text-brand-green mb-2">SICKLE++</h4>
-          <p className="text-sm">A Unified Multi-Task Evaluation Framework for Multi-Sensor Agricultural Remote Sensing</p>
-          <p className="text-xs mt-2 text-gray-400">Built on SICKLE (WACV 2024) · Extending to Real-World Deployment</p>
+    <footer className="bg-navy-900 text-gray-400 py-10 px-4">
+      <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+        <div className="flex flex-col items-center sm:items-start gap-1">
+          <span className="font-heading font-bold text-brand-green text-base">SICKLE++</span>
+          <p className="text-xs">© 2026 SICKLE++ · Research to Platform</p>
         </div>
-        <div>
-          <h5 className="font-semibold mb-2">Quick Links</h5>
-          <ul className="text-sm space-y-1">
-            <li><a href="#dataset" className="hover:text-white">Register for Dataset</a></li>
-            <li><a href="https://github.com" target="_blank" rel="noreferrer" className="hover:text-white">GitHub Repository</a></li>
-            <li><a href="#" className="hover:text-white">Documentation</a></li>
-            <li><a href="#" className="hover:text-white">API Reference</a></li>
-          </ul>
+        <div className="flex items-center gap-6">
+          <a href="https://openaccess.thecvf.com/content/WACV2024/html/Sani_SICKLE_A_Multi-Sensor_Satellite_Imagery_Dataset_Annotated_With_Multiple_Key_WACV_2024_paper.html" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-xs hover:text-gray-200"><BookOpen size={14}/>Paper</a>
+          <a href="https://github.com" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 text-xs hover:text-gray-200"><Github size={14}/>GitHub</a>
+          <a href="mailto:contact@iiitd.ac.in" className="flex items-center gap-1.5 text-xs hover:text-gray-200"><Mail size={14}/>Contact</a>
+          <span className="flex items-center gap-1.5 text-xs"><Users size={14}/>Authors</span>
         </div>
         <div>
           <h5 className="font-semibold mb-2">Legal</h5>
