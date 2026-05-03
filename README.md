@@ -1,61 +1,259 @@
-# Welcome to your OnSpace project
+# SICKLE++: Sentinel-1 Imagery for Crop Knowledge and Land Evaluation
 
-## How can I edit this code?
+![SICKLE++ Benchmark](public/hero.jpg)
 
-There are several ways of editing your application.
+A comprehensive research website and benchmark platform for crop phenology and yield prediction using satellite imagery. SICKLE++ extends the original SICKLE dataset with zero-shot generalization across geographic regions, comparing multi-sensor fusion approaches across diverse agricultural contexts.
 
-**Use OnSpace**
+## Overview
 
-Simply visit the [OnSpace Project]() and start prompting.
+SICKLE++ presents a two-phase research initiative:
 
-Changes made via OnSpace will be committed automatically to this repo.
+- **Phase 1 (Foundation):** Original Tamil Nadu dataset (WACV 2024) establishing baseline performance with multi-sensor fusion (Sentinel-1, Sentinel-2, Landsat-8) across 5 crop phenology and yield prediction tasks.
 
-**Use your preferred IDE**
+- **Phase 2 (Generalization):** Zero-shot inference on Andhra Pradesh region using Phase 1-trained models, validating cross-region generalization with 730 plots from CIMMYT CSISA dataset.
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in OnSpace.
+**Research Tasks:**
+1. Crop Type Classification
+2. Sowing Date Regression (MAE in days)
+3. Transplanting Date Regression (MAE in days)
+4. Harvesting Date Regression (MAE in days)
+5. Yield Prediction (MAPE in percentage)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Repository Structure
 
-Follow these steps:
+```
+sickle-/
+├── public/                          # Static assets
+│   ├── hero.jpg                    # Hero section background
+│   ├── pipeline.png                # Data pipeline diagram
+│   ├── SICKLE_compressed.pdf       # Presentation slides
+│   └── robots.txt
+├── src/
+│   ├── pages/
+│   │   ├── Home.tsx                # Main landing page with all sections
+│   │   ├── Index.tsx
+│   │   └── NotFound.tsx
+│   ├── components/
+│   │   ├── features/               # Feature-specific components
+│   │   │   ├── DataPipeline.tsx
+│   │   │   ├── DatasetSection.tsx
+│   │   │   ├── HeroSection.tsx
+│   │   │   ├── KeyContributions.tsx
+│   │   │   ├── PresentationSection.tsx
+│   │   │   ├── SystemDesignFlow.tsx
+│   │   │   └── VideoSection.tsx
+│   │   ├── layout/                 # Layout components
+│   │   │   ├── Navbar.tsx          # Fixed navigation with smooth scrolling
+│   │   │   └── Footer.tsx          # Project footer with acknowledgments
+│   │   └── ui/                     # shadcn-ui components
+│   ├── hooks/
+│   │   ├── use-mobile.tsx
+│   │   └── use-toast.ts
+│   ├── lib/
+│   │   └── utils.ts
+│   ├── App.tsx
+│   ├── App.css
+│   ├── main.tsx
+│   ├── index.css
+│   └── vite-env.d.ts
+├── package.json
+├── vite.config.ts
+├── tsconfig.json
+├── tailwind.config.ts
+├── postcss.config.js
+├── eslint.config.js
+├── components.json
+└── README.md
+```
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js & npm ([install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating))
+
+### Local Development
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
+# Clone the repository
 git clone <YOUR_GIT_URL>
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Navigate to project directory
+cd sickle-
 
-# Step 3: Install the necessary dependencies.
+# Install dependencies
 npm i
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The application will be available at `http://localhost:5173` with auto-reloading enabled.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build & Preview
 
-**Use GitHub Codespaces**
+```sh
+# Build for production
+npm run build
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+# Preview production build locally
+npm run preview
+```
 
-## What technologies are used for this project?
+### Linting & Code Quality
 
-This project is built with:
+```sh
+# Run ESLint
+npm run lint
+```
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## Technology Stack
 
-## How can I deploy this project?
+- **Framework:** React 18 with TypeScript
+- **Build Tool:** Vite
+- **Styling:** Tailwind CSS with custom animations
+- **UI Components:** shadcn-ui
+- **Icons:** Lucide React
+- **Routing:** React Router
 
-Simply open [OnSpace]() and click on Share -> Publish.
+## Key Features
+
+### 1. **Phase 1 Results (Tamil Nadu Baseline)**
+- Multi-sensor fusion benchmarking on original SICKLE dataset
+- Best performance per sensor/task combination:
+  - Crop Type Classification: 81.77% IoU (Sentinel-1 only)
+  - Sowing Date: 2.30 days MAE (Sentinel-2)
+  - Transplanting Date: 6.16 days MAE (Sensor fusion)
+  - Harvesting Date: 8.83 days MAE (Sentinel-2)
+  - Yield Prediction: 59.38% MAPE (Landsat-8)
+
+### 2. **Phase 2 Results (Andhra Pradesh Zero-Shot)**
+- Cross-region generalization testing with 730 CIMMYT CSISA plots
+- Same models from Phase 1 applied without retraining
+- Comparable metric structure for fair comparison
+
+### 3. **Responsive Design**
+- Mobile-first architecture with responsive typography
+- Optimized table layouts for all screen sizes
+- Hero section with atmospheric background imagery
+- Smooth scrolling navigation with anchor links
+
+### 4. **Embedded Media**
+- YouTube presentation video
+- PDF viewer for research slides (SICKLE_compressed.pdf)
+- Pipeline diagram visualization
+- Responsive iframe containers
+
+### 5. **Comprehensive Appendices**
+- Crop Type Classification across all sensor/model combinations
+- Phenology Regression metrics (sowing, transplanting, harvesting)
+- Yield Prediction results with MAE, RMSE, MAPE statistics
+
+## Data Sources
+
+- **Phase 1 Dataset:** Original SICKLE collection from Tamil Nadu, India (WACV 2024)
+- **Phase 2 Dataset:** CIMMYT CSISA plots, Andhra Pradesh, India (2018 Rabi season)
+- **Satellite Imagery:**
+  - Sentinel-1 SAR (C-band, VV/VH polarization) via ESA Copernicus
+  - Sentinel-2 MSI (10/20m optical bands) via ESA Copernicus
+  - Landsat-8 OLI (30m multispectral) via USGS
+  - Data access via SentinelHub API and Google Earth Engine
+
+## Navigation
+
+The website includes smooth scroll navigation to the following sections:
+
+- **Overview** – Project introduction and SICKLE framework
+- **Problem Statement** – Agricultural monitoring challenges and research motivation
+- **Existing Work** – SICKLE Foundation and Phase 1 baseline results
+- **Phase 2** – Andhra Pradesh dataset and zero-shot evaluation setup
+- **Results** – Comprehensive Phase 1 & Phase 2 metrics and analysis
+- **Pipeline** – System architecture and data processing workflow
+
+## Customization
+
+### Colors & Theming
+Edit `tailwind.config.ts` to modify:
+- Navy background palette (primary: `#0f172a`)
+- Sage accent palette (primary: `#f1f5f2`)
+- Brand green color (primary: `#22c55e`)
+- Custom animations (fade-up, fade-in, slide-right)
+
+### Adding Content Sections
+1. Update `src/pages/Home.tsx` to add new section content
+2. Add navigation link to `src/components/layout/Navbar.tsx`
+3. Assign `id` attribute to new section for smooth scroll linking
+4. Update Tailwind classes for responsive breakpoints
+
+## Performance Notes
+
+- **Static Site Generation:** All content pre-rendered at build time
+- **Image Optimization:** Hero background at optimized resolution
+- **PDF Viewer:** Embedded via iframe (ensure CORS headers on production)
+- **Responsive Tables:** CSS overflow-x for mobile, min-width containers
+
+## Acknowledgments
+
+This research builds upon datasets and infrastructure provided by:
+- **CIMMYT** – CSISA program and Andhra Pradesh field site coordination
+- **ESA Copernicus Programme** – Sentinel-1 and Sentinel-2 satellite data
+- **USGS Earth Explorer** – Landsat-8 satellite imagery
+- **Google Earth Engine** – Cloud computing for large-scale analysis
+- **ICAR (Indian Council of Agricultural Research)** – Agricultural domain expertise
+
+## Citation
+
+For research using SICKLE or SICKLE++, please cite:
+```
+@inproceedings{sickle2024,
+  title={SICKLE: Sentinel-1 Imagery for Crop Knowledge and Land Evaluation},
+  booktitle={Proceedings of the IEEE/CVF Winter Conference on Computer Vision and Applications (WACV)},
+  year={2024}
+}
+```
+
+## Development & Editing
+
+### Use Your Preferred IDE
+
+Clone the repository and work locally:
+```sh
+git clone <YOUR_GIT_URL>
+cd sickle-
+npm i
+npm run dev
+```
+
+### Edit Files Directly in GitHub
+
+- Navigate to the desired file
+- Click the "Edit" button (pencil icon)
+- Commit your changes
+
+### Use GitHub Codespaces
+
+- Click "Code" (green button) on the repository
+- Select "Codespaces" tab
+- Click "New codespace"
+- Edit and commit changes
+
+## Deployment
+
+The project can be deployed to any static hosting service:
+
+- **Vercel:** Automatic deployments from Git
+- **Netlify:** Connect repository for CI/CD
+- **GitHub Pages:** Build and deploy from Actions
+- **Traditional Hosting:** Run `npm run build` and deploy the `dist/` directory
+
+## License & Contributing
+
+For contribution guidelines and licensing information, see the project's main documentation.
+
+## Support
+
+For questions or issues related to the SICKLE++ research, please refer to the embedded presentation PDF in the "Existing Work" section or contact the research team.
+
+---
+
+**Last Updated:** 2024
