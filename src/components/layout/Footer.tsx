@@ -14,6 +14,19 @@ export default function Footer() {
           <a href="mailto:contact@iiitd.ac.in" className="flex items-center gap-1.5 text-xs hover:text-gray-200"><Mail size={14}/>Contact</a>
           <span className="flex items-center gap-1.5 text-xs"><Users size={14}/>Authors</span>
         </div>
+        <div>
+          <h5 className="font-semibold mb-2">Legal</h5>
+          <ul className="text-sm space-y-1">
+            <li><a href="#" className="hover:text-white">Terms of Use</a></li>
+            <li><a href="#" className="hover:text-white">Data Privacy Policy</a></li>
+            <li><a href="#" className="hover:text-white">License</a></li>
+            <li><a href="#" className="hover:text-white">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div className="max-w-6xl mx-auto pt-5 text-xs text-gray-400 flex flex-col md:flex-row justify-between gap-2">
+        <p>© 2026 SICKLE++ Project. All rights reserved. Last updated: May 2026.</p>
+        <p>If you use SICKLE/SICKLE++, please cite the WACV 2024 paper.</p>
       </div>
     </footer>
   );
