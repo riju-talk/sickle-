@@ -2,7 +2,17 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 const SICKLE_URL = "https://sites.google.com/iiitd.ac.in/sickle/home";
-const PAPER_URL = "https://openaccess.thecvf.com/content/WACV2024/html/Sani_SICKLE_A_Multi-Sensor_Satellite_Imagery_Dataset_Annotated_With_Multiple_Key_WACV_2024_paper.html";
+
+const timeline = [
+  ["2018–2021", "Satellite Data Collection (Tamil Nadu)"],
+  ["2021–2022", "Ground Surveys + Annotation"],
+  ["2023", "Dataset Construction"],
+  ["2024", "WACV Acceptance (Oral Presentation)"],
+  ["2024", "Benchmark Models: U-TAE, ConvLSTM, U-Net3D"],
+  ["2025 (Phase 1++)", "Benchmark Extension: Andhra Pradesh (Sentinel-1)"],
+  ["2025–2026", "SICKLE++ Development"],
+  ["2026", "Web Platform + Automated Pipeline"],
+];
 
 export default function Home() {
   return (
@@ -11,207 +21,156 @@ export default function Home() {
       <main className="pt-14">
         <section id="hero" className="px-4 py-20 bg-white border-b border-gray-100">
           <div className="max-w-5xl mx-auto text-center">
-            <h1 className="text-5xl font-heading font-bold mb-4">SICKLE++</h1>
-            <h2 className="text-2xl text-gray-700 mb-3">A unified multi-task evaluation framework for multi-sensor agricultural remote sensing</h2>
-            <p className="text-brand-green font-medium mb-4">Extending SICKLE beyond datasets into real-world agricultural intelligence systems</p>
-            <p className="text-gray-500 mb-8">Built on top of SICKLE (WACV 2024), SICKLE++ transforms static datasets into scalable evaluation and deployment pipelines.</p>
+            <h1 className="text-5xl font-heading font-bold mb-4">SICKLE → SICKLE++</h1>
+            <h2 className="text-2xl text-gray-700 mb-4">From Multi-Sensor Agricultural Dataset to Scalable AI Platform</h2>
+            <p className="text-gray-500 mb-8">Multi-task. Multi-sensor. Real-world agricultural intelligence.</p>
             <div className="flex flex-wrap justify-center gap-3">
               <a href={SICKLE_URL} target="_blank" rel="noreferrer" className="px-6 py-3 rounded-full bg-brand-green text-white font-semibold">Register for Dataset</a>
-              <a href="/coming-soon" className="px-6 py-3 rounded-full border border-navy-900 font-semibold">Open Web App</a>
+              <a href="/coming-soon" className="px-6 py-3 rounded-full border border-navy-900 font-semibold">Launch Web App</a>
             </div>
           </div>
         </section>
 
         <section id="problem" className="px-4 py-16">
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl font-heading font-bold mb-5">The Missing Layer in Agricultural AI</h3>
-            <p className="text-gray-700 mb-4">Remote sensing has made it possible to observe agriculture at scale. Satellite data provides continuous coverage across regions, seasons, and environmental conditions.</p>
-            <p className="text-gray-700 mb-4">However, the real bottleneck is not data availability — it is <strong>usable, structured, learning-ready data systems</strong>.</p>
-            <ul className="list-disc ml-5 text-gray-700 space-y-2 mb-5">
-              <li>Labeled datasets are scarce.</li>
-              <li>Annotations are expensive.</li>
-              <li>Datasets are fragmented across tasks.</li>
-            </ul>
-            <blockquote className="border-l-4 border-brand-green pl-4 my-6 text-lg font-medium">Models exist. Data exists. Systems do not.</blockquote>
-            <div className="bg-white border border-brand-green/30 rounded-xl p-5 text-gray-700">Agriculture is not a single-task problem. It is a <strong>temporal, multi-variable, multi-sensor system problem</strong>.</div>
-          </div>
-        </section>
-
-        <section className="px-4 py-16 bg-white border-y border-gray-100">
-          <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl font-heading font-bold mb-5">Where Current Approaches Break</h3>
-            <p className="text-gray-700 mb-4">Most work in agricultural remote sensing focuses on isolated problems like crop classification, yield prediction, or segmentation. In reality, these tasks are connected.</p>
+            <h3 className="text-3xl font-heading font-bold mb-5">The Data Bottleneck in Agricultural AI</h3>
             <ul className="list-disc ml-5 text-gray-700 space-y-2">
-              <li>No unified datasets combining crop type, phenology, and yield.</li>
-              <li>No temporal consistency across data.</li>
-              <li>No generalization across regions.</li>
-              <li>Heavy dependence on manual annotation.</li>
-              <li>No standardized evaluation frameworks.</li>
+              <li>Machine learning performance depends on high-quality labeled datasets.</li>
+              <li>In agriculture, satellite data is abundant, but labels are scarce.</li>
             </ul>
-            <p className="mt-5 font-semibold">Agricultural intelligence cannot be built on fragmented pipelines.</p>
+            <blockquote className="border-l-4 border-brand-green pl-4 my-6 text-lg font-medium">
+              Despite widespread earth observation data, lack of curated labeled datasets limits ML performance in agriculture.
+            </blockquote>
+            <ul className="list-disc ml-5 text-gray-700 space-y-2">
+              <li>Ground surveys are expensive, labor-intensive, and hard to scale.</li>
+              <li>Multi-sensor fusion remains complex and inconsistent.</li>
+            </ul>
           </div>
         </section>
 
-        <section id="dataset" className="px-4 py-16">
+        <section id="dataset" className="px-4 py-16 bg-white border-y border-gray-100">
           <div className="max-w-5xl mx-auto space-y-8">
             <h3 className="text-3xl font-heading font-bold">SICKLE: A Multi-Sensor Agricultural Dataset</h3>
-            <p className="text-gray-700">SICKLE introduced one of the first structured datasets integrating multiple satellite modalities with key agricultural parameters.</p>
+            <p className="text-gray-600">SICKLE is a time-series multi-sensor dataset designed for agricultural modeling.</p>
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white rounded-xl p-5 border border-gray-100">
-                <h4 className="font-semibold mb-2">Dataset Facts</h4>
+              <div className="bg-sage-50 rounded-xl p-5">
+                <h4 className="font-semibold mb-2">Key Features</h4>
                 <ul className="list-disc ml-5 text-gray-700 space-y-1">
                   <li>Sensors: Sentinel-1 (SAR), Sentinel-2 (Optical), Landsat-8 (Thermal)</li>
-                  <li>Time-series: 2018 to 2021</li>
-                  <li>Region: Cauvery Delta, Tamil Nadu</li>
-                  <li>2,370 samples, 388 plots, ~209,000 images</li>
+                  <li>Time span: January 2018 to March 2021</li>
+                  <li>2,370 samples, 388 plots, ~209,000 satellite images</li>
                 </ul>
               </div>
-              <div className="bg-white rounded-xl p-5 border border-gray-100">
-                <h4 className="font-semibold mb-2">Tasks</h4>
+              <div className="bg-sage-50 rounded-xl p-5">
+                <h4 className="font-semibold mb-2">Tasks & Innovation</h4>
                 <ul className="list-disc ml-5 text-gray-700 space-y-1">
-                  <li>Crop type classification</li>
-                  <li>Phenology: sowing, transplanting, harvesting</li>
-                  <li>Yield prediction</li>
+                  <li>Crop classification, phenology prediction, and yield prediction</li>
+                  <li>Multi-task learning on one dataset</li>
+                  <li>Multi-resolution annotations: 3m, 10m, and 30m</li>
                 </ul>
-                <p className="mt-4 font-medium">SICKLE reframed agriculture as a multi-task learning problem.</p>
               </div>
             </div>
           </div>
         </section>
 
-        <section className="px-4 py-16 bg-white border-y border-gray-100">
-          <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl font-heading font-bold mb-5">Baseline Learnings from SICKLE</h3>
-            <ul className="list-disc ml-5 text-gray-700 space-y-2">
-              <li>ConvLSTM performs well on classification.</li>
-              <li>U-TAE dominates temporal prediction and yield.</li>
-              <li>3D U-Net is unstable for temporal predictions.</li>
-              <li>No model performs uniformly across tasks.</li>
-            </ul>
-            <p className="mt-5 font-semibold">Model performance is task-dependent — not universal.</p>
-          </div>
-        </section>
-
         <section className="px-4 py-16">
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl font-heading font-bold mb-5">From Dataset to Reality</h3>
+            <h3 className="text-3xl font-heading font-bold mb-4">Dataset Deep Dive</h3>
             <ul className="list-disc ml-5 text-gray-700 space-y-2">
-              <li>SICKLE is region-specific.</li>
-              <li>It remains static and annotation-heavy.</li>
-              <li>It has no real-time deployment layer.</li>
+              <li>Time-series sequences are aligned with regional cropping cycles.</li>
+              <li>Data is multi-modal: optical, thermal, and microwave.</li>
+              <li>Annotations are polygon-based and derived from farmer surveys + GPS coordinates.</li>
+              <li>Collection quality depends heavily on farmer recall and survey quality.</li>
             </ul>
-            <blockquote className="border-l-4 border-brand-green pl-4 my-6 text-lg font-medium">Can we move from datasets to systems?</blockquote>
           </div>
         </section>
 
         <section className="px-4 py-16 bg-white border-y border-gray-100">
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl font-heading font-bold mb-5">SICKLE++: Extending to Real-World Deployment</h3>
+            <h3 className="text-3xl font-heading font-bold mb-4">Limitations of Existing Dataset</h3>
             <ul className="list-disc ml-5 text-gray-700 space-y-2">
-              <li>New region: Andhra Pradesh with distinct climate and cropping patterns.</li>
-              <li>Zero-shot evaluation: models trained on Tamil Nadu applied to Andhra Pradesh.</li>
-              <li>Dataset creation: 150+ annotated plots from survey and satellite alignment.</li>
-              <li>Sentinel-1 focused SAR-based inference pipeline.</li>
+              <li>Manual annotation bottleneck</li>
+              <li>Limited geographic coverage (Tamil Nadu)</li>
+              <li>No real-time data ingestion</li>
+              <li>No standardized evaluation system</li>
+              <li>Static dataset, not scalable</li>
             </ul>
-            <p className="mt-5 font-semibold">SICKLE++ tests whether agricultural models can generalize beyond their origin.</p>
           </div>
         </section>
 
         <section className="px-4 py-16">
+          <div className="max-w-5xl mx-auto">
+            <h3 className="text-3xl font-heading font-bold mb-6">Evolution of SICKLE → SICKLE++</h3>
+            <div className="space-y-4">
+              {timeline.map(([year, event]) => (
+                <div key={year + event} className="border-l-2 border-brand-green pl-4">
+                  <p className="text-sm text-brand-green font-semibold">{year}</p>
+                  <p className="text-gray-700">{event}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="px-4 py-16 bg-white border-y border-gray-100">
+          <div className="max-w-5xl mx-auto space-y-6">
+            <h3 className="text-3xl font-heading font-bold">SICKLE++: From Dataset to Platform</h3>
+            <p className="text-lg">Transform static dataset into a dynamic AI system.</p>
+            <ul className="list-disc ml-5 text-gray-700 space-y-2">
+              <li>Benchmark expansion in Andhra Pradesh with Sentinel-1 experimentation</li>
+              <li>Multi-sensor scaling across Sentinel-2, Landsat-8, and fusion pipelines</li>
+              <li>Automation layer with mask generation to reduce manual dependency</li>
+              <li>Systemization of workflow: Dataset → Benchmark → Platform</li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="px-4 py-16">
+          <div className="max-w-5xl mx-auto space-y-8">
+            <h3 className="text-3xl font-heading font-bold">System Overview</h3>
+            <p className="font-mono text-sm bg-gray-100 p-4 rounded">Data → Preprocessing → Model → Evaluation → Results</p>
+            <h3 className="text-3xl font-heading font-bold">Automated Data Pipeline</h3>
+            <p className="font-mono text-sm bg-gray-100 p-4 rounded whitespace-pre-line">Satellite Data
+↓
+Preprocessing
+↓
+Mask Generation (Automated)
+↓
+Dataset Structuring
+↓
+Model Inference
+↓
+Evaluation</p>
+          </div>
+        </section>
+
+        <section className="px-4 py-16 bg-white border-y border-gray-100">
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
             <div>
-              <h3 className="text-3xl font-heading font-bold mb-4">From Data to Decision</h3>
+              <h3 className="text-3xl font-heading font-bold mb-4">Real-Time Agricultural Intelligence</h3>
               <ul className="list-disc ml-5 text-gray-700 space-y-2">
-                <li>Data ingestion</li>
-                <li>Model execution</li>
-                <li>Evaluation engine</li>
-                <li>Metrics computation</li>
-                <li>Report generation</li>
+                <li>Live satellite data fetching</li>
+                <li>On-demand inference</li>
+                <li>Multi-model evaluation (U-TAE, ConvLSTM, 3D U-Net)</li>
               </ul>
-              <p className="mt-4 font-medium">This is not just training — this is an end-to-end pipeline.</p>
             </div>
             <div>
-              <h3 className="text-3xl font-heading font-bold mb-4">Automating the Data Stack</h3>
+              <h3 className="text-3xl font-heading font-bold mb-4">SICKLE++ Web Interface</h3>
               <ul className="list-disc ml-5 text-gray-700 space-y-2">
-                <li>Satellite data retrieval (SentinelHub)</li>
-                <li>GeoJSON region extraction + bounding boxes</li>
-                <li>Band stacking and normalization</li>
-                <li>Mask generation from annotations</li>
-                <li>Grid transformation and dataset structuring</li>
+                <li>Input: coordinates or region</li>
+                <li>Output: crop class, phenology stage, yield estimate</li>
+                <li>Status: 🚧 Under Development</li>
               </ul>
-              <p className="mt-4 text-sm bg-gray-100 p-3 rounded">Satellite Data → Preprocessing → Mask Generation → Dataset Structuring → Model → Evaluation</p>
             </div>
           </div>
         </section>
 
-        <section className="px-4 py-16 bg-white border-y border-gray-100">
-          <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl font-heading font-bold mb-5">Cross-Region Benchmarking</h3>
-            <ul className="list-disc ml-5 text-gray-700 space-y-2">
-              <li>Performance drops across tasks on Andhra Pradesh.</li>
-              <li>ConvLSTM remains strongest for crop classification.</li>
-              <li>Yield prediction remains unstable; U-TAE leads but with high error.</li>
-              <li>Temporal predictions are sensitive to missing/noisy observations.</li>
-            </ul>
-            <p className="mt-5 font-semibold">Generalization is the real bottleneck in agricultural AI.</p>
-          </div>
-        </section>
-
-        <section className="px-4 py-16">
-          <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl font-heading font-bold mb-5">What SICKLE++ Adds</h3>
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="bg-white border rounded-xl p-4"><strong>Dual Dataset Support</strong><p className="text-sm text-gray-600">Cell-based + plot-based formats.</p></div>
-              <div className="bg-white border rounded-xl p-4"><strong>Evaluation Framework</strong><p className="text-sm text-gray-600">Standardized benchmarking and reporting.</p></div>
-              <div className="bg-white border rounded-xl p-4"><strong>Pipeline Refinement</strong><p className="text-sm text-gray-600">Structured, semi-automated data processing.</p></div>
-              <div className="bg-white border rounded-xl p-4"><strong>Engineering Fixes</strong><p className="text-sm text-gray-600">Scalability and compatibility improvements.</p></div>
-            </div>
-          </div>
-        </section>
-
-        <section className="px-4 py-16 bg-white border-y border-gray-100">
-          <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl font-heading font-bold mb-5">Towards Agricultural Intelligence Systems</h3>
-            <ul className="list-disc ml-5 text-gray-700 space-y-2">
-              <li>Continuous satellite ingestion</li>
-              <li>Dynamic model updates</li>
-              <li>Real-time insights for farmers and policymakers</li>
-            </ul>
-            <p className="mt-5 font-semibold">Agriculture should be monitored like a live system, not studied like a static dataset.</p>
-          </div>
-        </section>
-
-        <section className="px-4 py-16">
-          <div className="max-w-5xl mx-auto">
-            <h3 className="text-3xl font-heading font-bold mb-5">Future Work</h3>
-            <ul className="list-disc ml-5 text-gray-700 space-y-2">
-              <li>Multi-region scaling</li>
-              <li>Fully automated mask generation</li>
-              <li>Integration with weather and soil data</li>
-              <li>Real-time inference APIs</li>
-              <li>Human-in-the-loop training</li>
-            </ul>
-          </div>
-        </section>
-
-        <section className="px-4 py-16 bg-white border-t border-gray-100 text-center">
-          <h3 className="text-3xl font-heading font-bold mb-3">Access the System</h3>
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-4 text-left mb-6">
-            <div className="border rounded-xl p-5">
-              <h4 className="font-semibold mb-2">Register for SICKLE Dataset</h4>
-              <p className="text-gray-600 text-sm">Access curated multi-sensor agricultural data and benchmarking tools.</p>
-            </div>
-            <div className="border rounded-xl p-5">
-              <h4 className="font-semibold mb-2">SICKLE++ Web Platform</h4>
-              <p className="text-gray-600 text-sm">Live evaluation, visualization, and inference. Status: Under Construction.</p>
-            </div>
-          </div>
+        <section className="px-4 py-16 text-center">
+          <h3 className="text-3xl font-heading font-bold mb-3">Get Started</h3>
           <div className="flex flex-wrap justify-center gap-3">
-            <a href={SICKLE_URL} target="_blank" rel="noreferrer" className="px-6 py-3 rounded-full bg-brand-green text-white font-semibold">Register</a>
-            <a href="/coming-soon" className="px-6 py-3 rounded-full border border-navy-900 font-semibold">Open Web App</a>
+            <a href={SICKLE_URL} target="_blank" rel="noreferrer" className="px-6 py-3 rounded-full bg-brand-green text-white font-semibold">Register for Dataset</a>
+            <a href="/coming-soon" className="px-6 py-3 rounded-full border border-navy-900 font-semibold">Launch Web App</a>
           </div>
-          <p className="mt-8 text-2xl font-heading font-bold">SICKLE was a dataset. SICKLE++ is a system.</p>
-          <p className="mt-3 text-sm text-gray-500">References: <a className="underline" href={PAPER_URL} target="_blank" rel="noreferrer">WACV 2024 Open Access Paper</a></p>
         </section>
       </main>
       <Footer />
